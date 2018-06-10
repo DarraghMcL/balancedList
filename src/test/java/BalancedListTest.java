@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -10,9 +11,6 @@ public class BalancedListTest {
     @BeforeEach
     public void setup(){
 
-        BalancedNode node = BalancedNode.createNewNode(new Object(), 1);
-
-        BalancedList balancedList = BalancedList.createNewList(node);
 
     }
 
@@ -25,8 +23,10 @@ public class BalancedListTest {
 
     @Test
     public void addNodeTest(){
+        BalancedNode node = BalancedNode.createNewNode(new Object(), 1);
 
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3) );
+        balancedList = BalancedList.createNewList(node);
+        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
         System.out.print(balancedList.toString());
 
         assertTrue(balancedList.size()== 3);

@@ -65,22 +65,22 @@ public class BalancedList {
     private BalancedNode traverseLeft(BalancedNode n) {
 
         if (n.getLeftBuddy() != null) {
-            traverseLeft(n.getLeftBuddy());
+            return traverseLeft(n.getLeftBuddy());
         }
         return n;
-    }
-
-    public BalancedNode getLeftestNode() {
-        return traverseLeft(rootNode);
     }
 
     private BalancedNode traverseRight(BalancedNode n) {
 
         if (n.getRightBuddy() != null) {
-            traverseRight(n.getRightBuddy());
+           return traverseRight(n.getRightBuddy());
         }
         return n;
 
+    }
+
+    public BalancedNode getLeftestNode() {
+        return traverseLeft(rootNode);
     }
 
     public BalancedNode getRightestNode() {
