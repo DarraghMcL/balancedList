@@ -1,10 +1,11 @@
-package main.java;
-
 public class BalancedList {
-
 
     private BalancedNode rootNode;
 
+
+    public BalancedList(BalancedNode rootNode){
+        this.rootNode = rootNode;
+    }
 
     public BalancedNode getRootNode() {
         return rootNode;
@@ -12,6 +13,12 @@ public class BalancedList {
 
     public void setRootNode(BalancedNode n) {
         this.rootNode = n;
+    }
+
+    public static BalancedList createNewList(BalancedNode node){
+
+        return new BalancedList(node);
+
     }
 
     public void popLeft() {
@@ -35,6 +42,19 @@ public class BalancedList {
         rootNode.setRoot(false);
         rootNode.getRightBuddy().setRoot(true);
 
+    }
+
+    public int size(){
+
+        int size=0;
+        BalancedNode node = getLeftestNode();
+
+        while(node != null){
+            size += 1;
+            node = node.getRightBuddy();
+        }
+
+        return size;
     }
 
     public void add(BalancedNode leftNode, BalancedNode rightNode) {
@@ -68,7 +88,7 @@ public class BalancedList {
     }
 
 
-    public void addLeftNode(BalancedNode n) {
+    private void addLeftNode(BalancedNode n) {
 
         BalancedNode newNode = n;
         BalancedNode currentLeft = getLeftestNode();
@@ -77,7 +97,7 @@ public class BalancedList {
 
     }
 
-    public void addRightNode(BalancedNode n) {
+    private void addRightNode(BalancedNode n) {
         BalancedNode newNode = n;
         BalancedNode currentRight = getRightestNode();
         currentRight.setRightBuddy(newNode);
@@ -91,7 +111,7 @@ public class BalancedList {
 
     @Override
     public String toString(){
-        String string = "";
+        String string = "This List: ";
 
         BalancedNode node = getLeftestNode();
 
