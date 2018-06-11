@@ -15,17 +15,16 @@ public class BalancedListTest {
 
     @Test
     public void createNewNodeTest(){
-        BalancedNode newNode = BalancedNode.createNewNode(new Object(), 2);
+        BalancedNode<String> newNode = new BalancedNode<>("Two", 2);
         assertTrue(newNode.getId()==2);
-
     }
 
     @Test
     public void addNodeTest(){
-        BalancedNode node = BalancedNode.createNewNode(new Object(), 1);
+        BalancedNode<String> rootNode = new BalancedNode<>("One", 1);
 
-        balancedList = BalancedList.createNewList(node);
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
+        balancedList = BalancedList.createNewList(rootNode);
+        balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
         System.out.println(balancedList.toString());
 
         assertTrue(balancedList.size()== 3);
@@ -34,14 +33,14 @@ public class BalancedListTest {
 
     @Test
     public void addMultipleNodeTest(){
-        BalancedNode node = BalancedNode.createRootNode(new Object(), 1);
+        BalancedNode<String> rootNode = new BalancedNode<>("One", 1);
 
-        balancedList = BalancedList.createNewList(node);
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 4), BalancedNode.createNewNode(new Object(), 5));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 6), BalancedNode.createNewNode(new Object(), 7));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 8), BalancedNode.createNewNode(new Object(), 9));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 10), BalancedNode.createNewNode(new Object(), 11));
+        balancedList = BalancedList.createNewList(rootNode);
+        balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
+        balancedList.add(new BalancedNode<>("Four", 4), new BalancedNode<>("Five", 5));
+        balancedList.add(new BalancedNode<>("Six", 6), new BalancedNode<>("Seven", 7));
+        balancedList.add(new BalancedNode<>("Eight", 8), new BalancedNode<>("Nine", 9));
+        balancedList.add(new BalancedNode<>("Ten", 10), new BalancedNode<>("Eleven", 11));
 
 
         System.out.println(balancedList.toString());
@@ -52,14 +51,14 @@ public class BalancedListTest {
 
     @Test
     public void popRightTest(){
-        BalancedNode node = BalancedNode.createRootNode(new Object(), 1);
+        BalancedNode<String> rootNode = new BalancedNode<>("One", 1);
 
-        balancedList = BalancedList.createNewList(node);
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 4), BalancedNode.createNewNode(new Object(), 5));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 6), BalancedNode.createNewNode(new Object(), 7));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 8), BalancedNode.createNewNode(new Object(), 9));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 10), BalancedNode.createNewNode(new Object(), 11));
+        balancedList = BalancedList.createNewList(rootNode);
+        balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
+        balancedList.add(new BalancedNode<>("Four", 4), new BalancedNode<>("Five", 5));
+        balancedList.add(new BalancedNode<>("Six", 6), new BalancedNode<>("Seven", 7));
+        balancedList.add(new BalancedNode<>("Eight", 8), new BalancedNode<>("Nine", 9));
+        balancedList.add(new BalancedNode<>("Ten", 10), new BalancedNode<>("Eleven", 11));
 
         balancedList.popRight();
 
@@ -71,14 +70,14 @@ public class BalancedListTest {
 
     @Test
     public void popRightMultipleTest(){
-        BalancedNode node = BalancedNode.createRootNode(new Object(), 1);
+        BalancedNode<String> rootNode = new BalancedNode<>("One", 1);
 
-        balancedList = BalancedList.createNewList(node);
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 4), BalancedNode.createNewNode(new Object(), 5));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 6), BalancedNode.createNewNode(new Object(), 7));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 8), BalancedNode.createNewNode(new Object(), 9));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 10), BalancedNode.createNewNode(new Object(), 11));
+        balancedList = BalancedList.createNewList(rootNode);
+        balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
+        balancedList.add(new BalancedNode<>("Four", 4), new BalancedNode<>("Five", 5));
+        balancedList.add(new BalancedNode<>("Six", 6), new BalancedNode<>("Seven", 7));
+        balancedList.add(new BalancedNode<>("Eight", 8), new BalancedNode<>("Nine", 9));
+        balancedList.add(new BalancedNode<>("Ten", 10), new BalancedNode<>("Eleven", 11));
 
         balancedList.popRight();
         balancedList.popRight();
@@ -94,14 +93,14 @@ public class BalancedListTest {
 
     @Test
     public void popLeftTest(){
-        BalancedNode node = BalancedNode.createRootNode(new Object(), 1);
+        BalancedNode<String> rootNode = new BalancedNode<>("One", 1);
 
-        balancedList = BalancedList.createNewList(node);
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 4), BalancedNode.createNewNode(new Object(), 5));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 6), BalancedNode.createNewNode(new Object(), 7));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 8), BalancedNode.createNewNode(new Object(), 9));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 10), BalancedNode.createNewNode(new Object(), 11));
+        balancedList = BalancedList.createNewList(rootNode);
+        balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
+        balancedList.add(new BalancedNode<>("Four", 4), new BalancedNode<>("Five", 5));
+        balancedList.add(new BalancedNode<>("Six", 6), new BalancedNode<>("Seven", 7));
+        balancedList.add(new BalancedNode<>("Eight", 8), new BalancedNode<>("Nine", 9));
+        balancedList.add(new BalancedNode<>("Ten", 10), new BalancedNode<>("Eleven", 11));
 
         balancedList.popLeft();
 
@@ -113,14 +112,15 @@ public class BalancedListTest {
 
     @Test
     public void popLeftMultipleTest(){
-        BalancedNode node = BalancedNode.createRootNode(new Object(), 1);
 
-        balancedList = BalancedList.createNewList(node);
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 4), BalancedNode.createNewNode(new Object(), 5));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 6), BalancedNode.createNewNode(new Object(), 7));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 8), BalancedNode.createNewNode(new Object(), 9));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 10), BalancedNode.createNewNode(new Object(), 11));
+        BalancedNode<String> rootNode = new BalancedNode<>("One", 1);
+
+        balancedList = BalancedList.createNewList(rootNode);
+        balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
+        balancedList.add(new BalancedNode<>("Four", 4), new BalancedNode<>("Five", 5));
+        balancedList.add(new BalancedNode<>("Six", 6), new BalancedNode<>("Seven", 7));
+        balancedList.add(new BalancedNode<>("Eight", 8), new BalancedNode<>("Nine", 9));
+        balancedList.add(new BalancedNode<>("Ten", 10), new BalancedNode<>("Eleven", 11));
 
         balancedList.popLeft();
         balancedList.popLeft();
@@ -138,11 +138,12 @@ public class BalancedListTest {
     public void passTheParcel(){
 
         String parcel = "Pass Me";
-        BalancedNode node = BalancedNode.createRootNode(parcel, 1);
+        BalancedNode<String> rootNode = new BalancedNode<>(parcel, 1);
 
-        balancedList = BalancedList.createNewList(node);
-        balancedList.add(BalancedNode.createNewNode(new Object(), 2), BalancedNode.createNewNode(new Object(), 3));
-        balancedList.add(BalancedNode.createNewNode(new Object(), 4), BalancedNode.createNewNode(new Object(), 5));
+        balancedList = BalancedList.createNewList(rootNode);
+        balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
+        balancedList.add(new BalancedNode<>("Four", 4), new BalancedNode<>("Five", 5));
+        balancedList.add(new BalancedNode<>("Six", 6), new BalancedNode<>("Seven", 7));
 
         balancedList.popLeft();
         balancedList.popLeft();

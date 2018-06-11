@@ -1,4 +1,4 @@
-public class BalancedList {
+public class BalancedList<T> {
 
     private BalancedNode rootNode;
 
