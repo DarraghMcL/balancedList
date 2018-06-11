@@ -25,7 +25,7 @@ public class BalancedListTest {
 
         balancedList = BalancedList.createNewList(rootNode);
         balancedList.add(new BalancedNode<>("Two", 2), new BalancedNode<>("Three", 3));
-        System.out.println(balancedList.toString());
+        System.out.println("Add node test:\t\t\t\t" + balancedList.toString());
 
         assertTrue(balancedList.size()== 3);
 
@@ -43,7 +43,7 @@ public class BalancedListTest {
         balancedList.add(new BalancedNode<>("Ten", 10), new BalancedNode<>("Eleven", 11));
 
 
-        System.out.println(balancedList.toString());
+        System.out.println("Add multiple node test: \t" + balancedList.toString());
 
         assertTrue(balancedList.size()== 11);
 
@@ -62,7 +62,7 @@ public class BalancedListTest {
 
         balancedList.popRight();
 
-        System.out.println(balancedList.toString());
+        System.out.println("Pop right test: \t\t\t" + balancedList.toString());
 
         assertTrue(balancedList.getRootNode().getId()==3);
 
@@ -84,7 +84,7 @@ public class BalancedListTest {
         balancedList.popRight();
         balancedList.popRight();
 
-        System.out.println(balancedList.toString());
+        System.out.println("Pop right multiple test: \t" + balancedList.toString());
 
         assertTrue(balancedList.getRootNode().getId()==9);
 
@@ -104,7 +104,7 @@ public class BalancedListTest {
 
         balancedList.popLeft();
 
-        System.out.println(balancedList.toString());
+        System.out.println("Pop left test: \t\t\t\t" + balancedList.toString());
 
         assertTrue(balancedList.getRootNode().getId()==2);
 
@@ -128,7 +128,7 @@ public class BalancedListTest {
         balancedList.popLeft();
 
 
-        System.out.println(balancedList.toString());
+        System.out.println("Pop left multiple test: \t" + balancedList.toString());
 
         assertTrue(balancedList.getRootNode().getId()==8);
 
@@ -157,11 +157,9 @@ public class BalancedListTest {
         balancedList.popRight();
         balancedList.popRight();
 
-        System.out.println("Pass the Parcel: " + balancedList.toString());
+        System.out.println("Pass the Parcel test: \t\t" + balancedList.toString());
 
         assertTrue(balancedList.getRootNode().getPayload().equals("Pass Me"));
 
     }
-
-
 }
