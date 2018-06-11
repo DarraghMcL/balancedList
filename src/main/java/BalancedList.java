@@ -24,23 +24,23 @@ public class BalancedList {
     public void popLeft() {
 
         BalancedNode rightestNode = getRightestNode();
+        rightestNode.getLeftBuddy().setRightBuddy(null);
 
         detachNode(rightestNode);
         addLeftNode(rightestNode);
 
-        rootNode.setRoot(false);
-        rootNode.getLeftBuddy().setRoot(true);
+        setRootNode(rootNode.getLeftBuddy());
 
     }
 
     public void popRight() {
         BalancedNode leftestNode = getLeftestNode();
+        leftestNode.getRightBuddy().setLeftBuddy(null);
 
         detachNode(leftestNode);
         addRightNode(leftestNode);
 
-        rootNode.setRoot(false);
-        rootNode.getRightBuddy().setRoot(true);
+        setRootNode(rootNode.getRightBuddy());
 
     }
 
@@ -94,12 +94,12 @@ public class BalancedList {
         BalancedNode currentLeft = getLeftestNode();
         currentLeft.setLeftBuddy(n);
         newNode.setRightBuddy(currentLeft);
-
     }
 
     private void addRightNode(BalancedNode n) {
         BalancedNode newNode = n;
         BalancedNode currentRight = getRightestNode();
+
         currentRight.setRightBuddy(newNode);
         newNode.setLeftBuddy(currentRight);
     }
